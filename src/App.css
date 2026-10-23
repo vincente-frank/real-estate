@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 @import "tailwindcss";
-@import "starting-point-ui";
 
 @theme{
   --font-nova:"Bona Nova", sans-serif;

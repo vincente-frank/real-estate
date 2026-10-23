@@ -38,7 +38,8 @@ const Clients = () => {
 
     <div>
         {/* clients section */}
-        <section className='h-auto px-6 bg-white text-left py-12 container ' >
+        <section className='h-auto px-6 bg-white text-left py-12 container
+        w-full ' >
             {/* client label */}
             <div className='flex items-center  justify-start gap-x-1
             grip '>
