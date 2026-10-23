@@ -7,16 +7,45 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react"
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 
 
 const Property = () => {
 
+    gsap.registerPlugin(ScrollTrigger)
+
+    function propertyAnimation ():gsap.core.Timeline {
+        let propertyContainer = document.querySelector(".property-container")
+        let title = document.querySelector(".property-title")
+        let description = document.querySelector(".property-description")
+        let property = document.querySelector(".property")
+        let duration = 2
+        const tl = gsap.timeline()
+        .from(property, {opacity:0, scale:0.4, ease:"back", duration:duration})
+        .from(title, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
+        .from(description, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
+
+        ScrollTrigger.create({
+            trigger: propertyContainer,
+            animation: tl,
+            start: "top 80%",
+            toggleActions: "play none none none",
+        })
+
+        return tl;
+    }
+
+    useGSAP ( ()=> { propertyAnimation() }, []);
+
   return (
 
     <div>
         {/* property section */}
-        <section className="min-h-screen h-auto px-6 pt-16 pb-12 ">
+        <section className="min-h-screen h-auto px-6 pt-16 pb-12
+        property-container ">
             {/* property headings */}
             <div className="py-12">
                 {/* property label */}
@@ -27,9 +56,9 @@ const Property = () => {
                 </div>
                 {/* title */}
                 <h2 className='font-momo font-black capitalize tracking-widest
-                 text-[24px] py-3 md:text-[2.4rem] title '>renting house & sell property</h2>
+                 text-[24px] py-3 md:text-[2.4rem] property-title '>renting house & sell property</h2>
                 <p className='font-nova text-[18px] py-3 text-black/70 md:text-[24px]
-                md:pr-[28rem] md:text-[32px] '>
+                md:pr-[28rem] md:text-[32px] property-description '>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Deserunt ut soluta fugit!
                 </p>
