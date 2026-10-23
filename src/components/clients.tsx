@@ -2,16 +2,13 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Grip } from 'lucide-react'
-import React, { useRef } from 'react'
 
 const Clients = () => {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const sectionRef = useRef(null)
-
+    
     function clientAnimation ():gsap.core.Timeline {
-        const section1 = sectionRef.current
         let container = document.querySelector(".container")
         let clients = document.querySelector(".clients")
         let grip = document.querySelector(".grip")
@@ -19,28 +16,29 @@ const Clients = () => {
         let description = document.querySelector(".client-description")
         let duration = 2
         const tl = gsap.timeline()
-        .from(grip, {opacity:0, y:80, ease:"back", duration:duration})
-        .from(heading, {opacity:0, xPercent:-250, ease:"back", duration:duration})
+        .from(grip, {opacity:0, y:80, scale:0.4, ease:"back.out", duration:duration})
+        .from(heading, {opacity:0, xPercent:-250, ease:"back", duration:duration},"-=1.4")
         .from(description, {opacity:0, y:80, ease:"back", duration:duration})
-        .from(clients, {opacity:0, y:80, ease:"back", duration:duration})
+        .from(clients, {opacity:0, y:80, ease:"back", duration:duration},"-=1.5")
 
         ScrollTrigger.create({
-            trigger: section1,
+            trigger: container,
             start: "top 80%",
-            scrub: true,
-            markers: true
+            end: "+=500",
+            animation: tl,
+            toggleActions: "play none none none",
         })
 
         return tl;
     }
 
-    useGSAP ( ()=> { clientAnimation() }, {scope: sectionRef} );
+    useGSAP ( ()=> { clientAnimation() }, [] );
 
   return (
 
     <div>
         {/* clients section */}
-        <section ref={sectionRef} className='h-auto px-6 bg-white text-left py-12 container ' >
+        <section className='h-auto px-6 bg-white text-left py-12 container ' >
             {/* client label */}
             <div className='flex items-center  justify-start gap-x-1
             grip '>
