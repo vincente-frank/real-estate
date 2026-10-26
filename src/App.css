@@ -8,3 +8,9 @@
   --font-momo:"Momo Trust", sans-serif;
   --font-jim:"Jim Nightshade";
 };
+
+
+
+html, body {
+  scroll-behavior: smooth;
+}

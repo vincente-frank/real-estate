@@ -15,7 +15,7 @@ const Services = () => {
         let heading = document.querySelector(".title")
         let description = document.querySelector(".services-description")
         let services = document.querySelector(".services")
-        let duration = 2
+        let duration = 1
         const tl = gsap.timeline()
         .from(architecture, {opacity:0, scale:0, y:80,
             duration:duration, ease:"back.in"
@@ -23,7 +23,7 @@ const Services = () => {
         .from(heading, {opacity:0, y:80, duration:duration, ease:"back"})
         .from(description, {opacity:0, y:80, duration:duration, ease:"back"})
         .from(services, {opacity:0, scale:0.4, y:80,
-            duration:duration, ease:"back"
+            duration:duration, ease:"none"
         })
 
         ScrollTrigger.create({
@@ -42,7 +42,8 @@ const Services = () => {
 
     <div>
         {/* services section */}
-        <section className='min-h-screen h-auto p-6 bg-white text-black
+        <section id='services'
+        className='min-h-screen h-auto p-6 bg-white text-black
         font-nova services-container '>
             {/* services heading */}
                 <div className='grid grid-cols-1 items-start justify-center
@@ -88,7 +89,7 @@ const Services = () => {
                     object-cover object-center '
                     />
                     {/* link to contacts */}
-                    <a href="#"
+                    <a href="#contacts"
                     className='bg-white rounded-full absolute bottom-8 left-12 '>
                         <ArrowUpRight className='size-7'/>
                     </a>
@@ -111,7 +112,7 @@ const Services = () => {
                     className='rounded-[1rem] w-full saturate-200 '
                     />
                     {/* link to contacts */}
-                    <a href="#"
+                    <a href="#property"
                     className='bg-white rounded-full absolute bottom-8 left-12 '>
                     <ArrowUpRight className='size-7'/>
                     </a>
@@ -131,7 +132,7 @@ const Services = () => {
                     className='rounded-[1rem] w-full saturate-200 '
                     />
                     {/* link to contacts */}
-                    <a href="#"
+                    <a href="#values"
                     className='bg-white rounded-full absolute bottom-8 left-12 '>
                     <ArrowUpRight className='size-7'/>
                     </a>
@@ -151,7 +152,7 @@ const Services = () => {
                     className='rounded-[1rem] w-full saturate-200 '
                     />
                     {/* link to contacts */}
-                    <a href="#"
+                    <a href="#contacts"
                     className='bg-white rounded-full absolute bottom-8 left-12 '>
                     <ArrowUpRight className='size-7'/>
                     </a>
@@ -171,7 +172,7 @@ const Services = () => {
                     className='rounded-[1rem] w-full saturate-200 '
                     />
                     {/* link to contacts */}
-                    <a href="#"
+                    <a href="#services"
                     className='bg-white rounded-full absolute bottom-8 left-12 '>
                     <ArrowUpRight className='size-7'/>
                     </a>

@@ -22,11 +22,13 @@ const Property = () => {
         let title = document.querySelector(".property-title")
         let description = document.querySelector(".property-description")
         let property = document.querySelector(".property")
-        let duration = 2
+        let properties = document.querySelector(".properties")
+        let duration = 1
         const tl = gsap.timeline()
         .from(property, {opacity:0, scale:0.4, ease:"back", duration:duration})
         .from(title, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
         .from(description, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
+        .from(properties, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
 
         ScrollTrigger.create({
             trigger: propertyContainer,
@@ -44,7 +46,8 @@ const Property = () => {
 
     <div>
         {/* property section */}
-        <section className="min-h-screen h-auto px-6 pt-16 pb-12
+        <section id="property"
+        className="min-h-screen h-auto px-6 pt-16 pb-12
         property-container ">
             {/* property headings */}
             <div className="py-12">
@@ -64,7 +67,7 @@ const Property = () => {
                 </p>
             </div>
             {/* property carousel container */}
-            <div className="relative py-12">
+            <div className="relative py-12 properties">
 
                 <Swiper
                 modules={[Navigation, Pagination, EffectFade, Autoplay]}

@@ -15,15 +15,17 @@ const Values = () => {
         let values = document.querySelector(".values")
         let heading = document.querySelector(".values-heading")
         let description = document.querySelector(".values-description")
+        let link = document.querySelector(".values-link")
         let image = document.querySelector(".values-image")
         let innovative = document.querySelector(".innovative")
         let functionality = document.querySelector(".functionality")
         let modern = document.querySelector(".modern")
-        let duration = 2
+        let duration = 1
         const tl = gsap.timeline()
         .from(values, {opacity:0, scale:0.4, y:80, duration:duration, ease:"power1"})
         .from(heading, {opacity:0, y:80, duration:duration, ease:"back"})
         .from(description, {opacity:0, y:80, duration:duration, ease:"back"})
+        .from(link, {opacity:0, scale:0.4, y:80, duration:duration, ease:"power"})
         .from(image, {opacity:0, scale:0.4, y:80, duration:duration, ease:"power"})
         .from(innovative, {opacity:0, y:80, duration:duration, ease:"back"})
         .from(functionality, {opacity:0, y:80, duration:duration, ease:"back"})
@@ -47,7 +49,8 @@ const Values = () => {
     <div>
 
         {/* our values, our foundation section */}
-        <section className='min-h-screen h-auto p-6 values-container '>
+        <section id='values'
+        className='min-h-screen h-auto p-6 values-container '>
             {/* heading div */}
             <div className='flex items-start justify-start flex-col
             md:flex-row '>
@@ -73,8 +76,8 @@ const Values = () => {
                     </p>
                 </div>
                 {/* button or link div */}
-                <div className='py-3 md:pt-[15rem]'>
-                    <a href="#"
+                <div className='py-3 md:pt-[15rem] values-link '>
+                    <a href="#contacts"
                     className='font-momo font-medium text-[18px] tracking-wide
                     capitalize outline outline-2 outline-offet-2 px-2 py-1
                     rounded-[.2rem] md:text-[24px] hover:text-black/70

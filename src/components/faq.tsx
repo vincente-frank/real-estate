@@ -1,4 +1,4 @@
-import { Grip, PlusCircleIcon, XCircleIcon } from "lucide-react"
+import { ChevronDownCircle, ChevronUpCircle, Grip } from "lucide-react"
 import { useState } from "react"
 import { Questions } from "../utils/questions"
 import gsap from "gsap";
@@ -20,11 +20,13 @@ const FAQ = () => {
         let title = document.querySelector(".faq-title")
         let description = document.querySelector(".faq-description")
         let faq = document.querySelector(".faq")
-        let duration = 2
+        let theFaq = document.querySelector(".the-faq")
+        let duration = 1
         const tl = gsap.timeline()
         .from(faq, {opacity:0, scale:0.4, ease:"back", duration:duration})
         .from(title, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
         .from(description, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
+        .from(theFaq, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
 
         ScrollTrigger.create({
             trigger: faqContainer,
@@ -43,7 +45,8 @@ const FAQ = () => {
 
     <div>
         {/* faq section */}
-        <section className="min-h-screen h-auto px-6 py-12 faq-container ">
+        <section id="faq"
+        className="min-h-screen h-auto px-6 py-12 faq-container ">
             {/* team label */}
             <div className='flex items-center  justify-start gap-x-1
             md:col-span-3 faq '>
@@ -61,7 +64,7 @@ const FAQ = () => {
             </p>
 
             {/* faq questions container div */}
-            <div className="py-12 md:pr-[12rem] ">
+            <div className="py-12 md:pr-[6rem] the-faq ">
                 { Questions.map ( (question, index) => (
                     <div key={question.id}>
                         {/* question heading div */}
@@ -75,10 +78,10 @@ const FAQ = () => {
                             {/* changing icon */}
                             <div>
                                 { activeQuestion === index ? (
-                                    <XCircleIcon onClick={ ()=> setActiveQuestion(null) }
+                                    <ChevronUpCircle onClick={ ()=> setActiveQuestion(null) }
                                     className="cursor-pointer md:size-12 "/>
                                 ):(
-                                    <PlusCircleIcon onClick={ ()=> setActiveQuestion(index) }
+                                    <ChevronDownCircle onClick={ ()=> setActiveQuestion(index) }
                                     className="cursor-pointer md:size-12 "/>
                                 ) }
                             </div>

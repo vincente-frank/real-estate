@@ -25,7 +25,8 @@ const NavigationComponent = () => {
 
         {/* navigation on smaller screens */}
         <section className='bg-black text-white p-3 rounded-[2rem] flex
-        items-center justify-between m-3 md:hidden small-nav '>
+        items-center justify-between m-3 md:hidden small-nav fixed
+        left-0 right-0 z-10 '>
             {/* logo */}
             <div>
                 <h1 className='font-momo tracking-wide font-black
@@ -46,28 +47,38 @@ const NavigationComponent = () => {
         </section>
         {/* navigation drawer in smaller screens */}
         {menu && (
-            <div className='bg-black text-white h-auto mx-3 '>
+            <div className='bg-black text-white h-auto mx-3 fixed z-10
+            left-0 right-0 top-[5.3rem] p-4 rounded-[.2rem] '>
                 <nav className='flex items-start justify-start flex-col
                 gap-y-3 '>
-                <a href="#"
+                <a href="#hero" onClick={ ()=> setMenu(!menu) }
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
                 >home</a>
-                <a href="#"
+                <a href="#services" onClick={ ()=> setMenu(!menu) }
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
-                >home</a>
-                <a href="#"
+                >services</a>
+                <a href="#property" onClick={ ()=> setMenu(!menu) }
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
-                >home</a>
+                >properties</a>
+                <a href="#faq" onClick={ ()=> setMenu(!menu) }
+                className='inline-block capitalize font-nova tracking-wide
+                text-[17px] px-2 py-1 '
+                >FAQ</a>
+                <a href="#contacts" onClick={ ()=> setMenu(!menu) }
+                className='inline-block capitalize font-nova tracking-wide
+                text-[17px] px-2 py-1 '
+                >reach out</a>
                 </nav>
             </div>
         )}
 
         {/* navigation on medium to larger screens */}
         <section className='md:flex items-center justify-between px-6 py-3
-        bg-black text-white rounded-[2rem] mx-[16rem] my-4 hidden nav '>
+        bg-black text-white rounded-[2rem] mx-[16rem] my-4 hidden nav
+        fixed left-0 right-0 z-10 '>
             {/* logo */}
             <div>
                 <h1 className='font-momo tracking-wide font-black
@@ -77,23 +88,23 @@ const NavigationComponent = () => {
             <div>
                 <nav className='flex items-start justify-start flex-row
                 gap-x-3 '>
-                <a href="#"
+                <a href="#hero"
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
                 >home</a>
-                <a href="#"
+                <a href="#services"
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
-                >home</a>
-                <a href="#"
+                >services</a>
+                <a href="#property"
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 '
-                >home</a>
+                >properties</a>
                 </nav>
             </div>
             {/* contact us button */}
             <div>
-                 <a href="#"
+                 <a href="#contacts"
                 className='inline-block capitalize font-nova tracking-wide
                 text-[17px] px-2 py-1 font-black '
                 >contact us</a>

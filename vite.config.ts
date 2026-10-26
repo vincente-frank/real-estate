@@ -8,4 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server:{
+    allowedHosts: ['climate-anime-pulse.ngrok-free.dev'],
+  }
 })

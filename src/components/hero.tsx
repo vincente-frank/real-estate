@@ -21,7 +21,7 @@ const Hero = () => {
         .set(hero, {autoAlpha: 1})
         .from(word1, {opacity:0, xPercent:-100, ease:"back", duration:duration})
         .from(word2, {opacity:0, y:80, ease:"back", duration:duration},"-=1.3")
-        .from(description, {opacity:0, y:80, ease:"back", duration:duration})
+        .from(description, {opacity:0, y:80, ease:"none", duration:1})
         .from(link, {opacity:0, y:80, ease:"back", duration:duration,
             scale:0.4})
         return tl;
@@ -35,7 +35,8 @@ const Hero = () => {
 
     <div>
         {/* the hero section */}
-        <section className='min-h-screen h-auto p-6 relative bg-cover
+        <section id='hero'
+        className='min-h-screen h-auto p-6 relative bg-cover
         bg-[url("/hero.webp")] bg-center md:bg-bottom bg-fixed hero ' >
             {/* overlay */}
             <div className='absolute inset-0 bg-gradient-to-b from-sky-400
@@ -45,8 +46,8 @@ const Hero = () => {
                 {/* navigation */}
                 <NavigationComponent/>
                 {/* heading */}
-                <h1 className='pt-24 font-momo text-[16px] font-black
-                pb-4 text-white md:pt-18 '>
+                <h1 className='pt-[12rem] font-momo text-[16px] font-black
+                pb-4 text-white md:pt-18 md:pt-[13rem] '>
                     <span className='inline-block capitalize word1
                     md:text-[3rem] '>gwamaka real estates</span> <br />
                     <span className='inline-block font-thin lowercase
@@ -60,7 +61,7 @@ const Hero = () => {
                     Rem quisquam provident ducimus?
                 </p>
                 {/* linkk or button to contacts us */}
-                <a href="#"
+                <a href="#services"
                 className='bg-white px-2 py-1 rounded-[.2rem] font-black font-nova
                 text-[20px] my-4 inline-block md:my-8 link '
                 >what we do</a>

@@ -13,12 +13,14 @@ const Team = () => {
         let teamContainer = document.querySelector(".team-container")
         let title = document.querySelector(".team-title")
         let description = document.querySelector(".team-description")
-        let property = document.querySelector(".team")
-        let duration = 2
+        let theTeam = document.querySelector(".the-team")
+        let team = document.querySelector(".team")
+        let duration = 1
         const tl = gsap.timeline()
-        .from(property, {opacity:0, scale:0.4, ease:"back", duration:duration})
+        .from(team, {opacity:0, scale:0.4, ease:"back", duration:duration})
         .from(title, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
         .from(description, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
+        .from(theTeam, {opacity:0, ease:"power1.inOut", duration:duration, y:80})
 
         ScrollTrigger.create({
             trigger: teamContainer,
@@ -36,7 +38,8 @@ const Team = () => {
 
     <div>
         {/* team section */}
-        <section className="min-h-screen h-auto p-6 team-container ">
+        <section id="team"
+        className="min-h-screen h-auto p-6 team-container ">
             {/* team label */}
             <div className='flex items-center  justify-start gap-x-1
             md:col-span-3 team '>
@@ -54,7 +57,7 @@ const Team = () => {
             </p>
             {/* team container div */}
             <div className="flex items-start justify-start flex-col gap-6
-            md:flex-row " >
+            md:flex-row the-team " >
                 {/* first member of the team */}
                 <div className="bg-[url('/hero.webp')] h-[20rem] w-full bg-cover
                 bg-center relative rounded-[1rem] cursor-pointer ">
