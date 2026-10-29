@@ -1,7 +1,9 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { MenuIcon, XIcon } from 'lucide-react'
-import React, { useState } from 'react'
+import  { useState } from 'react'
+
+
 
 const NavigationComponent = () => {
 

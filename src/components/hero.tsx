@@ -1,4 +1,3 @@
-import React from 'react'
 import NavigationComponent from './navigation'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
